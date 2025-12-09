@@ -220,6 +220,7 @@ span {
 label {
     cursor: pointer;
 }
+
 /* ------------------------------------------------------------------------------------------ */
 /* ==========>   BOOTSTRAP */
 /* ------------------------------------------------------------------------------------------ */
@@ -283,7 +284,8 @@ label {
 }
 
 /* Notifications Menu */
-.dropdown-notifications-menu {
+.dropdown-notifications-menu,
+.dropdown-cart-menu {
     width: 320px;
     padding-bottom: 0;
 }
@@ -320,7 +322,7 @@ label {
     text-decoration: underline;
 }
 
-.dropdown-notifications-menu .dropdown-menu-body {
+.dropdown-menu-wide .dropdown-menu-body {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -328,19 +330,19 @@ label {
     overflow-y: auto;
 }
 
-.dropdown-notifications-menu .dropdown-menu-body::-webkit-scrollbar {
+.dropdown-menu-wide .dropdown-menu-body::-webkit-scrollbar {
     width: 5px;
 }
 
-.dropdown-notifications-menu .dropdown-menu-body::-webkit-scrollbar-track {
+.dropdown-menu-wide .dropdown-menu-body::-webkit-scrollbar-track {
     background-color: #e7e7e7;
 }
 
-.dropdown-notifications-menu .dropdown-menu-body::-webkit-scrollbar-thumb {
+.dropdown-menu-wide .dropdown-menu-body::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
-.dropdown-notifications-menu .dropdown-menu-body .notify-list-item {
+.dropdown-menu-wide .dropdown-menu-body .notify-list-item {
     display: flex;
     align-items: start;
     gap: 12px;
@@ -393,4 +395,63 @@ label {
 
 .dropdown-menu-footer:hover {
     text-decoration: underline;
+}
+
+.cart-menu-item {
+    display: flex;
+    align-items: start;
+    gap: 16px;
+    padding: 12px;
+    border-bottom: 1px solid var(--bg-stone-100);
+    position: relative;
+}
+
+.cart-menu-item .cart-menu-item-image {
+    width: 65px;
+    height: 75px;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cart-menu-item-info h6 {
+    font-size: 15px;
+}
+
+.cart-qty-control {
+    display: flex;
+    align-items: center;
+    margin: 7px 0;
+}
+
+.cart-qty-control .qty-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    border: none;
+    display: grid;
+    place-content: center;
+}
+
+span.qty-value {
+    display: grid;
+    place-content: center;
+    width: 34px;
+    border: 1px solid #c1c1c1;
+    margin: 0 4px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cart-qty-control .qty-btn:hover {
+    background-color: var(--bg-red-500);
+    color: white;
+}
+
+span.item-price {
+    color: var(--bg-sky-500);
+    font-weight: 600;
+    font-size: 16px;
 }
