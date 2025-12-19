@@ -14,6 +14,7 @@
 
     <!-- Css files & libraries -->
     <link rel="stylesheet" href="./assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/hab-icons.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -21,7 +22,62 @@
 
     <div id="app">
         <div class="app-wrapper">
-            Hello! HAB Dashboard Template ❤️
+            <!-- =================================================================================== SIDEBAR -->
+            <aside class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-brand">
+                        <span class="brand-logo">
+                            <i class="hab hab-colored-box"></i>
+                        </span>
+                        <a href="./index.html">HAB-Dashboard</a>
+                        <button type="button" class="toggler-sidebar">
+                            <i class="hab hab-angle-double-left"></i>
+                        </button>
+                    </div>
+                    <ul class="sidebar-menu-inner">
+                        <li class="sidebar-menu-item">
+                            <a href="./index.html" class="sidebar-menu-link">
+                                <i class="hab hab-home-outline"></i>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside><!-- ./sidebar -->
+
+
+            <main class="main-content">
+                <!-- =================================================================================== HEADER -->
+                <header class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button type="button" class="toggler-sidebar-mobile">
+                            <i class="hab hab-angle-double-right"></i>
+                        </button>
+                        <div class="navbar-collapse collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        X
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        O
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+
+                <!-- =================================================================================== PAGE CONTENT -->
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <h4 class="mb-4">Welcome to HAB-Dashboard ❤️</h4>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
 
