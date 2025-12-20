@@ -180,11 +180,16 @@
     --main-color: var(--bg-red-500);
     --border-color: var(--bg-stone-200);
     --radius-size: 4px;
+    --shadow: rgb(0, 0, 0, 0.08);
 
     /* SIDEBAR */
     --sidebar-width: 270px;
     --sidebar-background-color: white;
+    --sidebar-brand-color: white;
     --sidebar-border-color: var(--bg-stone-200);
+
+    /* HEADER */
+    --header-height: 74px;
 }
 
 ::selection {
@@ -244,16 +249,77 @@ ul {
 /* ==========>   THEMES CONTROL */
 /* ------------------------------------------------------------------------------------------ */
 .theme-light {
-    --sidebar-background-color: red;
-    --sidebar-border-color: green;
+    --sidebar-background-color: white;
+    --sidebar-border-color: white;
+    --sidebar-brand-color: white;
+    --shadow: rgb(83 46 43 / 4%);
 }
 
 /* ------------------------------------------------------------------------------------------ */
 /* ==========>   SIDEBAR */
 /* ------------------------------------------------------------------------------------------ */
 .sidebar {
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    position: fixed;
+    width: var(--sidebar-width);
+    box-shadow: 4px 0px 14px var(--shadow);
     background-color: var(--sidebar-background-color);
     border-right: 1px solid var(--sidebar-border-color);
-    width: var(--sidebar-width);
-    position: fixed;
+}
+
+[dir=rtl] .sidebar {
+    left: auto;
+    right: 0;
+    box-shadow: -4px 0px 14px var(--shadow);
+}
+
+.sidebar-brand {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    height: var(--header-height);
+    background-color: var(--sidebar-brand-color);
+    box-shadow: 0 8px 14px var(--shadow);
+}
+
+.sidebar-brand .toggler-sidebar {
+    position: relative;
+}
+
+.sidebar-menu-inner {
+    padding: 16px;
+}
+
+.sidebar-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* ==========>   MAIN CONTENT */
+/* ------------------------------------------------------------------------------------------ */
+.main-content {
+    padding-left: var(--sidebar-width);
+}
+
+[dir=rtl] .main-content {
+    padding-right: var(--sidebar-width);
+    padding-left: 0;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* ==========>   HEADER */
+/* ------------------------------------------------------------------------------------------ */
+.header-container {
+    width: 100%;
+    display: flex;
+    padding: 0 16px;
+    align-items: center;
+    background-color: white;
+    height: var(--header-height);
+    box-shadow: 0px 10px 14px var(--shadow);
 }
