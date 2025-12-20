@@ -3,4 +3,28 @@
 - Easy Customize
 - CSS Configurations
 - Well Documnetation
-- 
+
+
+
+TASKS:
+======
+⭕ Toogling sidebar
+⭕ Sidebar list content [UI Kits]
+⭕ Sidebar collapse mutli level menu
+⭕ RTL
+⭕ Responsive
+⭕ Dark Mode
+⭕ Header
+⭕ Breadcrumbs
+⭕ Search algolia
+
+
+
+APPS:
+=====
+🖋️ Calendar
+🖋️ Mailbox
+🖋️ Chat
+🖋️ File Manager
+🖋️ Settings
+🖋️ Invocises
