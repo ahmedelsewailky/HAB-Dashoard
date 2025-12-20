@@ -177,15 +177,15 @@
     --bg-cyan-950: #083344;
 
     /* CUSTOM CONFIGURATION */
-    --main-color: var(--bg-red-500);
-    --border-color: var(--bg-stone-200);
     --radius-size: 4px;
     --shadow: rgb(0, 0, 0, 0.08);
+    --main-color: var(--bg-red-500);
+    --border-color: var(--bg-stone-200);
 
     /* SIDEBAR */
     --sidebar-width: 270px;
-    --sidebar-background-color: white;
     --sidebar-brand-color: white;
+    --sidebar-background-color: white;
     --sidebar-border-color: var(--bg-stone-200);
 
     /* HEADER */
@@ -271,8 +271,8 @@ ul {
 }
 
 [dir=rtl] .sidebar {
-    left: auto;
     right: 0;
+    left: auto;
     box-shadow: -4px 0px 14px var(--shadow);
 }
 
@@ -281,8 +281,8 @@ ul {
     padding: 12px 16px;
     align-items: center;
     height: var(--header-height);
-    background-color: var(--sidebar-brand-color);
     box-shadow: 0 8px 14px var(--shadow);
+    background-color: var(--sidebar-brand-color);
 }
 
 .sidebar-brand .toggler-sidebar {
@@ -307,8 +307,8 @@ ul {
 }
 
 [dir=rtl] .main-content {
-    padding-right: var(--sidebar-width);
     padding-left: 0;
+    padding-right: var(--sidebar-width);
 }
 
 /* ------------------------------------------------------------------------------------------ */
