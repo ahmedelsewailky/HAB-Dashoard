@@ -13,3 +13,17 @@ document.addEventListener("click", function (e) {
         valueEl.innerText = current;
     }
 });
+
+$(function () {
+    if (localStorage.getItem('body') === 'collapsed') {
+        $('body').addClass('collapsed');
+    }
+
+    $('.toggler-sidebar').on('click', function () {
+        $('body').toggleClass('collapsed');
+        localStorage.setItem(
+            'body',
+            $('body').hasClass('collapsed') ? 'collapsed' : 'expanded'
+        );
+    });
+});
