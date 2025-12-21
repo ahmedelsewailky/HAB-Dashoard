@@ -289,6 +289,14 @@ ul {
 
 .sidebar-brand .toggler-sidebar {
     position: relative;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-content: center;
+}
+
+.collapsed .sidebar .sidebar-brand .toggler-sidebar i {
+    transform: rotateY(180deg);
 }
 
 .sidebar-menu-inner {
@@ -304,20 +312,56 @@ ul {
 .collapsed {
     --sidebar-width: 80px;
 }
+.sidebar .menu-text,
+.sidebar .sidebar-brand .brand-logo,
+.sidebar .sidebar-brand a {
+    opacity: 1;
+    max-width: 200px;
+    transform: translateX(0);
+    transition: 
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        max-width 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
+/* حالة الـ collapsed */
 .collapsed .sidebar .menu-text,
+.collapsed .sidebar .sidebar-brand .brand-logo,
 .collapsed .sidebar .sidebar-brand a {
-    display: none;
+    opacity: 0;
+    max-width: 0;
+    transform: translateX(-10px);
+}
+
+/* توسيط الأيقونات */
+.sidebar-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
 }
 
 .collapsed .sidebar .sidebar-menu-link {
     justify-content: center;
 }
 
-.sidebar-menu-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* فتح مؤقت عند الهوفر */
+.collapsed.sidebar-hovered {
+    --sidebar-width: 270px;
+}
+
+.collapsed.sidebar-hovered .menu-text,
+.collapsed.sidebar-hovered .sidebar-brand .brand-logo,
+.collapsed.sidebar-hovered .sidebar-brand a {
+    opacity: 1;
+    max-width: 200px;
+    transform: translateX(0);
+}
+
+.collapsed.sidebar-hovered .sidebar-menu-link {
+    justify-content: flex-start;
 }
 
 /* ------------------------------------------------------------------------------------------ */
