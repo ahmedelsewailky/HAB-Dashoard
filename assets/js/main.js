@@ -13,35 +13,3 @@ document.addEventListener("click", function (e) {
         valueEl.innerText = current;
     }
 });
-$(function () {
-    const $body = $('body');
-    const $sidebar = $('.sidebar');
-
-    // تحميل الحالة من localStorage
-    if (localStorage.getItem('sidebar') === 'collapsed') {
-        $body.addClass('collapsed');
-    }
-
-    // Click على التوجلر
-    $('.toggler-sidebar').on('click', function () {
-        $body.toggleClass('collapsed');
-        $body.removeClass('sidebar-hovered');
-
-        localStorage.setItem(
-            'sidebar',
-            $body.hasClass('collapsed') ? 'collapsed' : 'expanded'
-        );
-    });
-
-    // Hover يفتح مؤقتًا
-    $sidebar.on('mouseenter', function () {
-        if ($body.hasClass('collapsed')) {
-            $body.addClass('sidebar-hovered');
-        }
-    });
-
-    // خروج الهوفر يرجع مقفول
-    $sidebar.on('mouseleave', function () {
-        $body.removeClass('sidebar-hovered');
-    });
-});

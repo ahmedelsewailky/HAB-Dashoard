@@ -278,7 +278,7 @@ ul {
     box-shadow: -4px 0px 14px var(--shadow);
 }
 
-.sidebar-brand {
+.sidebar .sidebar-brand {
     display: flex;
     padding: 12px 16px;
     align-items: center;
@@ -287,43 +287,70 @@ ul {
     background-color: var(--sidebar-brand-color);
 }
 
-.sidebar-brand .toggler-sidebar {
-    position: relative;
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-content: center;
+.sidebar .sidebar-menu {
+    padding: 24px;
 }
 
-.collapsed {
+.sidebar .sidebar-menu .sidebar-menu-link {
+    background-color: whitesmoke;
+    width: 100%;
+    display: flex;
+    padding: 10px 12px;
+    align-items: end;
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar .sidebar-menu-link .svg-icon.caret-arrow-down {
+    margin-left: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .sidebar-menu-link[aria-expanded="true"] .svg-icon.caret-arrow-down {
+    transform: rotate(180deg);
+}
+
+.collapsed-sidebar {
     --sidebar-width: 80px;
 }
 
-.sidebar-menu-item .sidebar-menu-link {
-    display: flex;
-    align-items: end;
-    gap: 8px;
+.collapsed-sidebar .sidebar-brand a,
+.collapsed-sidebar .sidebar .sidebar-menu-link .svg-icon.caret-arrow-down,
+.collapsed-sidebar .sidebar .sidebar-menu-item .sidebar-menu-link .sidebar-menu-text {
+    display: none;
+}
+
+.collapsed-sidebar .sidebar .sidebar-brand {
+    display: grid;
     width: 100%;
+    place-content: center;
 }
 
-.sidebar-menu-item .sidebar-menu-link i {
-    flex-shrink: 0;
-    width: 22px;
+.collapsed-sidebar .sidebar .sidebar-menu {
+    padding: 12px;
+    position: relative;
 }
 
-.sidebar-menu-item .sidebar-menu-link .menu-text {
-    flex-grow: 1;
-    opacity: 1;
-    visibility: visible;
-    transition: 0.3s ease;
+.collapsed-sidebar .sidebar .sidebar-menu-item:hover .collapse {
+    left: 100%;
+    width: 200px;
+    padding: 12px;
+    color: #222;
+    position: absolute;
+    display: block !important;
+    background-color: white;
 }
 
-.collapsed .sidebar-menu-item .sidebar-menu-link .menu-text {font-size: 75%;}
+.collapsed-sidebar .sidebar .sidebar-menu-item:hover .sidebar-menu-link {
+    width: 267px;
+    color: white;
+    border-radius: 4px 4px 0;
+    background-color: tomato;
+}
 
-.collapsed .sidebar-menu-item .sidebar-menu-link {
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
+.collapsed-sidebar .sidebar .sidebar-menu-item:hover .sidebar-menu-link .sidebar-menu-text {
+    display: block;
+    margin-left: 44px;
 }
 
 /* ------------------------------------------------------------------------------------------ */
