@@ -36,7 +36,9 @@
                         </span>
                         <a href="./index.html">HAB-Dashboard</a>
                     </div>
-                    <ul class="sidebar-menu">
+
+                    <ul class="sidebar-menu" id="sidebarCollapses">
+                        <li class="sidebar-menu-title">General</li>
                         <li class="sidebar-menu-item">
                             <a href="#dashboardCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link">
                                 <span class="sidebar-menu-icon svg-icon">
@@ -58,12 +60,281 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="collapse" id="dashboardCollapseItems">
+                            <div class="collapse" id="dashboardCollapseItems" data-bs-parent="#sidebarCollapses">
+                                <h6>Dashboard</h6>
                                 <ul class="collapse-nav-menu">
-                                    <li class="collapse-nav-item"><a href="#" class="collapse-nav-link">Submenu 1</a>
+                                    <li class="collapse-nav-item"><a href="#" class="collapse-nav-link">Analytics</a>
                                     </li>
-                                    <li class="collapse-nav-item"><a href="#" class="collapse-nav-link">Submenu 2</a>
+                                    <li class="collapse-nav-item"><a href="#" class="collapse-nav-link">Ecommerce</a>
                                     </li>
+                                    <li class="collapse-nav-item"><a href="#" class="collapse-nav-link">Projects</a>
+                                    </li>
+                                    <li class="collapse-nav-item"><a href="#" class="collapse-nav-link">CRM</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-menu-title">Apps</li>
+                        <li class="sidebar-menu-item app-calendar">
+                            <a href="/pages/calendar.html" class="sidebar-menu-link">
+                                <span class="sidebar-menu-icon svg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <g fill="none">
+                                            <path fill="currentColor" fill-opacity="0.25" fill-rule="evenodd"
+                                                d="M7 4.432c0-.155 0-.233-.05-.278c-.052-.045-.128-.035-.28-.015c-1.12.143-1.902.436-2.498 1.033C3 6.343 3 8.229 3 12s0 5.657 1.172 6.828S7.229 20 11 20h2c3.771 0 5.657 0 6.828-1.172S21 15.771 21 12s0-5.657-1.172-6.828c-.596-.597-1.378-.89-2.499-1.033c-.151-.02-.227-.03-.278.015S17 4.277 17 4.432V6.5a1.5 1.5 0 0 1-3 0V4.3c0-.141 0-.212-.044-.255S13.842 4 13.701 4H10.3c-.142 0-.212 0-.256.045C10 4.088 10 4.159 10 4.3v2.2a1.5 1.5 0 1 1-3 0z"
+                                                clip-rule="evenodd" />
+                                            <path stroke="currentColor" stroke-linecap="round" d="M8.5 2.5v4m7-4v4"
+                                                stroke-width="1" />
+                                            <circle cx="7.5" cy="10.5" r=".5" fill="currentColor" />
+                                            <circle cx="10.5" cy="10.5" r=".5" fill="currentColor" />
+                                            <circle cx="13.5" cy="10.5" r=".5" fill="currentColor" />
+                                            <circle cx="16.5" cy="10.5" r=".5" fill="currentColor" />
+                                            <circle cx="7.5" cy="13.5" r=".5" fill="currentColor" />
+                                            <circle cx="10.5" cy="13.5" r=".5" fill="currentColor" />
+                                            <circle cx="13.5" cy="13.5" r=".5" fill="currentColor" />
+                                            <circle cx="16.5" cy="13.5" r=".5" fill="currentColor" />
+                                            <circle cx="7.5" cy="16.5" r=".5" fill="currentColor" />
+                                            <circle cx="10.5" cy="16.5" r=".5" fill="currentColor" />
+                                            <circle cx="13.5" cy="16.5" r=".5" fill="currentColor" />
+                                            <circle cx="16.5" cy="16.5" r=".5" fill="currentColor" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="sidebar-menu-text">Calendar</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item app-chat">
+                            <a href="/pages/chat.html" class="sidebar-menu-link">
+                                <span class="sidebar-menu-icon svg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <g fill="none">
+                                            <path fill="currentColor" fill-opacity="0.25"
+                                                d="M4 12a8 8 0 1 1 16 0v6.667c0 .31 0 .465-.034.592a1 1 0 0 1-.707.707c-.127.034-.282.034-.592.034H12a8 8 0 0 1-8-8" />
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.5 10.5h7m-7 3h5" stroke-width="1" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="sidebar-menu-text">Chat</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item app-mailbox">
+                            <a href="#mailboxCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link">
+                                <span class="sidebar-menu-icon svg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                        <rect width="14" height="14" fill="none" />
+                                        <path fill="currentColor" fill-rule="evenodd"
+                                            d="M11.821.098a1.62 1.62 0 0 1 2.077 2.076l-3.574 10.712a1.62 1.62 0 0 1-1.168 1.069a1.6 1.6 0 0 1-1.52-.434l-1.918-1.909l-2.014 1.042a.5.5 0 0 1-.73-.457l.083-3.184l7.045-5.117a.625.625 0 1 0-.735-1.012L2.203 8.088l-1.73-1.73a1.6 1.6 0 0 1-.437-1.447a1.62 1.62 0 0 1 1.068-1.238h.004z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <span class="sidebar-menu-text">Mailbox</span>
+                                <span class="badge badge-primary">3</span>
+                                <span class="svg-icon caret-arrow-down">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2.5" d="m19 9l-7 6l-7-6" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="collapse" id="mailboxCollapseItems" data-bs-parent="#sidebarCollapses">
+                                <h6>Mailbox</h6>
+                                <ul class="collapse-nav-menu">
+                                    <li class="collapse-nav-item"><a href="/pages/email-inbox.html"
+                                            class="collapse-nav-link">Email</a></li>
+                                    <li class="collapse-nav-item"><a href="/pages/email-compose.html"
+                                            class="collapse-nav-link">Compose</a></li>
+                                    <li class="collapse-nav-item"><a href="/pages/email-read.html"
+                                            class="collapse-nav-link">Read</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-menu-item app-tasks">
+                            <a href="#tasksCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link">
+                                <span class="sidebar-menu-icon svg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <path fill="currentColor"
+                                            d="M21 15.998v-6c0-2.828 0-4.242-.879-5.121C19.353 4.109 18.175 4.012 16 4H8c-2.175.012-3.353.109-4.121.877C3 5.756 3 7.17 3 9.998v6c0 2.829 0 4.243.879 5.122c.878.878 2.293.878 5.121.878h6c2.828 0 4.243 0 5.121-.878c.879-.88.879-2.293.879-5.122"
+                                            opacity="0.5" />
+                                        <path fill="currentColor"
+                                            d="M8 3.5A1.5 1.5 0 0 1 9.5 2h5A1.5 1.5 0 0 1 16 3.5v1A1.5 1.5 0 0 1 14.5 6h-5A1.5 1.5 0 0 1 8 4.5z" />
+                                        <path fill="currentColor" fill-rule="evenodd"
+                                            d="M6.25 10.5A.75.75 0 0 1 7 9.75h.5a.75.75 0 0 1 0 1.5H7a.75.75 0 0 1-.75-.75m3.5 0a.75.75 0 0 1 .75-.75H17a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75M6.25 14a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5H7a.75.75 0 0 1-.75-.75m3.5 0a.75.75 0 0 1 .75-.75H17a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75m-3.5 3.5a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5H7a.75.75 0 0 1-.75-.75m3.5 0a.75.75 0 0 1 .75-.75H17a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <span class="sidebar-menu-text">Tasks</span>
+                                <span class="svg-icon caret-arrow-down">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2.5" d="m19 9l-7 6l-7-6" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="collapse" id="tasksCollapseItems" data-bs-parent="#sidebarCollapses">
+                                <h6>Tasks</h6>
+                                <ul class="collapse-nav-menu">
+                                    <li class="collapse-nav-item"><a href="/pages/tasks.html"
+                                            class="collapse-nav-link">Tasks</a></li>
+                                    <li class="collapse-nav-item"><a href="/pages/tasks-details.html"
+                                            class="collapse-nav-link">Details</a></li>
+                                    <li class="collapse-nav-item"><a href="/pages/tasks-kanban.html"
+                                            class="collapse-nav-link">Kanban Board</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-menu-item app-filemanager">
+                            <a href="/pages/file-manager.html" class="sidebar-menu-link">
+                                <span class="sidebar-menu-icon svg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <g fill="none">
+                                            <path fill="currentColor" fill-opacity="0.25"
+                                                d="M3 8h14.8c1.12 0 1.68 0 2.108.218a2 2 0 0 1 .874.874C21 9.52 21 10.08 21 11.2v5.6c0 1.12 0 1.68-.218 2.108a2 2 0 0 1-.874.874C19.48 20 18.92 20 17.8 20H6.2c-1.12 0-1.68 0-2.108-.218a2 2 0 0 1-.874-.874C3 18.48 3 17.92 3 16.8zm0 0c0-.932 0-1.398.152-1.765a2 2 0 0 1 1.083-1.083C4.602 5 5.068 5 6 5h2.343c.818 0 1.226 0 1.594.152s.657.442 1.235 1.02L13 8z" />
+                                            <path stroke="currentColor" d="M10 14h5m0 0l-2.5-2.5M15 14l-2.5 2.5"
+                                                stroke-width="1" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="sidebar-menu-text">File Manager</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item app-contacts">
+                            <a href="/pages/contacts.html" class="sidebar-menu-link">
+                                <span class="sidebar-menu-icon svg-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <path fill="currentColor"
+                                            d="M12 14q.825 0 1.413-.587T14 12t-.587-1.412T12 10t-1.412.588T10 12t.588 1.413T12 14m-4 4h8v-.575q0-.6-.325-1.1t-.9-.75q-.65-.275-1.338-.425T12 15t-1.437.15t-1.338.425q-.575.25-.9.75T8 17.425zm10 4H6q-.825 0-1.412-.587T4 20V4q0-.825.588-1.412T6 2h7.175q.4 0 .763.15t.637.425l4.85 4.85q.275.275.425.638t.15.762V20q0 .825-.587 1.413T18 22" />
+                                    </svg>
+                                </span>
+                                <span class="sidebar-menu-text">Contacts</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item app-ecommerce">
+                            <a href="#ecommerceCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link">
+                                <span class="sidebar-menu-icon svg-icon">
+                                    <!-- icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <g fill="none">
+                                            <path fill="currentColor" fill-opacity="0.25"
+                                                d="M4.413 10.609C3.69 10.127 4.03 9 4.9 9h14.2c.869 0 1.21 1.127.487 1.609a1.76 1.76 0 0 0-.74 1.08l-1.15 5.179c-.335 1.501-.502 2.252-1.05 2.692s-1.317.44-2.856.44H10.21c-1.539 0-2.308 0-2.856-.44c-.549-.44-.715-1.19-1.05-2.692l-1.15-5.18a1.76 1.76 0 0 0-.74-1.08" />
+                                            <path stroke="currentColor" stroke-linecap="round"
+                                                d="M12 7V5m3 11.5l.5-3m-3.5 3v-3m-3 3l-.5-3" stroke-width="1" />
+                                        </g>
+                                    </svg>
+                                </span>
+
+                                <span class="sidebar-menu-text">Ecommerce</span>
+
+                                <span class="svg-icon caret-arrow-down">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                                        <rect width="24" height="24" fill="none" />
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2.5" d="m19 9l-7 6l-7-6" />
+                                    </svg>
+                                </span>
+                            </a>
+
+                            <!-- Ecommerce collapse -->
+                            <div class="collapse" id="ecommerceCollapseItems" data-bs-parent="#sidebarCollapses">
+                                <h6>Ecommerce</h6>
+                                <ul class="collapse-nav-menu">
+
+                                    <!-- Products -->
+                                    <li class="collapse-nav-item">
+                                        <a href="#productsCollapse" data-bs-toggle="collapse" class="collapse-nav-link">
+                                            Products
+
+                                            <span class="svg-icon caret-arrow-down">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                    viewBox="0 0 24 24">
+                                                    <rect width="24" height="24" fill="none" />
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2.5"
+                                                        d="m19 9l-7 6l-7-6" />
+                                                </svg>
+                                            </span>
+                                        </a>
+
+                                        <ul class="collapse collapse-inner" id="productsCollapse"
+                                            data-bs-parent="#ecommerceCollapseItems">
+                                            <li><a href="/pages/ecommerce/products-list.html">List</a></li>
+                                            <li><a href="/pages/ecommerce/products-grid.html">Grid</a></li>
+                                            <li><a href="/pages/ecommerce/products-add.html">Add</a></li>
+                                            <li><a href="/pages/ecommerce/products-details.html">Details</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- Orders -->
+                                    <li class="collapse-nav-item">
+                                        <a href="#ordersCollapse" data-bs-toggle="collapse" class="collapse-nav-link">
+                                            Orders
+
+                                            <span class="svg-icon caret-arrow-down">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                    viewBox="0 0 24 24">
+                                                    <rect width="24" height="24" fill="none" />
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2.5"
+                                                        d="m19 9l-7 6l-7-6" />
+                                                </svg>
+                                            </span>
+                                        </a>
+
+                                        <ul class="collapse collapse-inner" id="ordersCollapse"
+                                            data-bs-parent="#ecommerceCollapseItems">
+                                            <li><a href="/pages/ecommerce/orders-list.html">List</a></li>
+                                            <li><a href="/pages/ecommerce/orders-grid.html">Grid</a></li>
+                                            <li><a href="/pages/ecommerce/orders-add.html">Add</a></li>
+                                            <li><a href="/pages/ecommerce/orders-details.html">Details</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- Invoices -->
+                                    <li class="collapse-nav-item">
+                                        <a href="#invoicesCollapse" data-bs-toggle="collapse" class="collapse-nav-link">
+                                            Invoices
+
+                                            <span class="svg-icon caret-arrow-down">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                    viewBox="0 0 24 24">
+                                                    <rect width="24" height="24" fill="none" />
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2.5"
+                                                        d="m19 9l-7 6l-7-6" />
+                                                </svg>
+                                            </span>
+                                        </a>
+
+                                        <ul class="collapse collapse-inner" id="invoicesCollapse"
+                                            data-bs-parent="#ecommerceCollapseItems">
+                                            <li><a href="/pages/ecommerce/invoice-1.html">Invoice 1</a></li>
+                                            <li><a href="/pages/ecommerce/invoice-2.html">Invoice 2</a></li>
+                                            <li><a href="/pages/ecommerce/invoice-3.html">Invoice 3</a></li>
+                                            <li><a href="/pages/ecommerce/invoice-4.html">Invoice 4</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- Other pages -->
+                                    <li class="collapse-nav-item">
+                                        <a href="/pages/ecommerce/checkout.html" class="collapse-nav-link">
+                                            Checkout
+                                        </a>
+                                    </li>
+
+                                    <li class="collapse-nav-item">
+                                        <a href="/pages/ecommerce/wishlist.html" class="collapse-nav-link">
+                                            Wishlist
+                                        </a>
+                                    </li>
+
                                 </ul>
                             </div>
                         </li>
