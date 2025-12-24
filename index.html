@@ -38,8 +38,8 @@
                     </div>
 
                     <ul class="sidebar-menu" id="sidebarCollapses">
-                        <li class="sidebar-menu-title">General</li>
-                        <li class="sidebar-menu-item">
+                        <li class="sidebar-menu-title"><i class="pepicons-dots"></i> <span>General</span></li>
+                        <li class="sidebar-menu-item dropdown-menu-item">
                             <a href="#dashboardCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link"
                                 aria-expanded="true">
                                 <span class="sidebar-menu-icon svg-icon">
@@ -77,7 +77,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="sidebar-menu-title">Apps</li>
+                        <li class="sidebar-menu-title"><i class="pepicons-dots"></i> <span>Apps</span></li>
                         <li class="sidebar-menu-item app-calendar">
                             <a href="/pages/calendar.html" class="sidebar-menu-link">
                                 <span class="sidebar-menu-icon svg-icon">
@@ -110,7 +110,7 @@
                                 <span class="badge badge-success badge-shadow rounded-pill ms-2">13+</span>
                             </a>
                         </li>
-                        <li class="sidebar-menu-item app-mailbox">
+                        <li class="sidebar-menu-item dropdown-menu-item app-mailbox">
                             <a href="#mailboxCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link">
                                 <span class="sidebar-menu-icon svg-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="sidebar-menu-item app-tasks">
+                        <li class="sidebar-menu-item dropdown-menu-item app-tasks">
                             <a href="#tasksCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link">
                                 <span class="sidebar-menu-icon svg-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
@@ -209,7 +209,7 @@
                                 <span class="sidebar-menu-text">Contacts</span>
                             </a>
                         </li>
-                        <li class="sidebar-menu-item app-ecommerce">
+                        <li class="sidebar-menu-item dropdown-menu-item app-ecommerce">
                             <a href="#ecommerceCollapseItems" data-bs-toggle="collapse" class="sidebar-menu-link">
                                 <span class="sidebar-menu-icon svg-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -238,7 +238,7 @@
                                 <ul class="collapse-nav-menu">
 
                                     <!-- Products -->
-                                    <li class="collapse-nav-item">
+                                    <li class="collapse-nav-item dropdown-menu-item">
                                         <a href="#productsCollapse" data-bs-toggle="collapse" class="collapse-nav-link">
                                             Products
 
@@ -255,15 +255,20 @@
 
                                         <ul class="collapse collapse-inner" id="productsCollapse"
                                             data-bs-parent="#ecommerceCollapseItems">
-                                            <li><a href="/pages/ecommerce/products-list.html">List</a></li>
-                                            <li><a href="/pages/ecommerce/products-grid.html">Grid</a></li>
-                                            <li><a href="/pages/ecommerce/products-add.html">Add</a></li>
-                                            <li><a href="/pages/ecommerce/products-details.html">Details</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/products-list.html"
+                                                    class="collapse-nav-link">List</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/products-grid.html"
+                                                    class="collapse-nav-link">Grid</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/products-add.html"
+                                                    class="collapse-nav-link">Add</a></li>
+                                            <li class="collapse-nav-item"><a
+                                                    href="/pages/ecommerce/products-details.html"
+                                                    class="collapse-nav-link">Details</a></li>
                                         </ul>
                                     </li>
 
                                     <!-- Orders -->
-                                    <li class="collapse-nav-item">
+                                    <li class="collapse-nav-item dropdown-menu-item">
                                         <a href="#ordersCollapse" data-bs-toggle="collapse" class="collapse-nav-link">
                                             Orders
 
@@ -280,15 +285,19 @@
 
                                         <ul class="collapse collapse-inner" id="ordersCollapse"
                                             data-bs-parent="#ecommerceCollapseItems">
-                                            <li><a href="/pages/ecommerce/orders-list.html">List</a></li>
-                                            <li><a href="/pages/ecommerce/orders-grid.html">Grid</a></li>
-                                            <li><a href="/pages/ecommerce/orders-add.html">Add</a></li>
-                                            <li><a href="/pages/ecommerce/orders-details.html">Details</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/orders-list.html"
+                                                    class="collapse-nav-link">List</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/orders-grid.html"
+                                                    class="collapse-nav-link">Grid</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/orders-add.html"
+                                                    class="collapse-nav-link">Add</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/orders-details.html"
+                                                    class="collapse-nav-link">Details</a></li>
                                         </ul>
                                     </li>
 
                                     <!-- Invoices -->
-                                    <li class="collapse-nav-item">
+                                    <li class="collapse-nav-item dropdown-menu-item">
                                         <a href="#invoicesCollapse" data-bs-toggle="collapse" class="collapse-nav-link">
                                             Invoices
 
@@ -305,10 +314,14 @@
 
                                         <ul class="collapse collapse-inner" id="invoicesCollapse"
                                             data-bs-parent="#ecommerceCollapseItems">
-                                            <li><a href="/pages/ecommerce/invoice-1.html">Invoice 1</a></li>
-                                            <li><a href="/pages/ecommerce/invoice-2.html">Invoice 2</a></li>
-                                            <li><a href="/pages/ecommerce/invoice-3.html">Invoice 3</a></li>
-                                            <li><a href="/pages/ecommerce/invoice-4.html">Invoice 4</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/invoice-1.html"
+                                                    class="collapse-nav-link">Invoice 1</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/invoice-2.html"
+                                                    class="collapse-nav-link">Invoice 2</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/invoice-3.html"
+                                                    class="collapse-nav-link">Invoice 3</a></li>
+                                            <li class="collapse-nav-item"><a href="/pages/ecommerce/invoice-4.html"
+                                                    class="collapse-nav-link">Invoice 4</a></li>
                                         </ul>
                                     </li>
 

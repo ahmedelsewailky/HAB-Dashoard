@@ -328,6 +328,10 @@ ul {
     text-transform: uppercase;
 }
 
+.sidebar .sidebar-menu .sidebar-menu-title i {
+    display: none;
+}
+
 .sidebar .sidebar-menu .sidebar-menu-title::before {
     top: 0;
     left: 50%;
@@ -347,7 +351,7 @@ ul {
     margin-top: 22px;
 }
 
-.sidebar .sidebar-menu .sidebar-menu-item {
+.sidebar .sidebar-menu .dropdown-menu-item {
     position: relative;
 }
 
@@ -371,16 +375,20 @@ ul {
 }
 
 .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link.active,
-.sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link.active {
-    background-color: rgb(var(--main-rgb-color), 0.05);
+.sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link.active,
+.sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link.active:hover,
+.sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link.active:hover {
+    background-color: rgb(var(--main-rgb-color), 0.05) !important;
     border-radius: 4px;
 }
 
 .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link.active,
 .sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link.active,
+.sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link.active:hover,
+.sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link.active:hover,
 .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link:hover,
 .sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link:hover {
-    color: var(--main-color);
+    color: var(--main-color) !important;
 }
 
 .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link::before,
@@ -443,6 +451,20 @@ ul {
     vertical-align: unset;
 }
 
+.pepicons-dots {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M14 10.25a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-5 0a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-5 0a1.249 1.249 0 1 1 2.5 0a1.25 1.25 0 1 1-2.5 0'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
 /* ================================================ */
 /* ===========  COLLAPSED SIDEBAR  ================ */
 /* ================================================ */
@@ -468,7 +490,8 @@ ul {
     overflow-y: inherit;
 }
 
-.collapsed-sidebar .sidebar .sidebar-menu-item .collapse {
+.collapsed-sidebar .sidebar .sidebar-menu-item .collapse,
+.collapsed-sidebar .sidebar .collapse-menu-item .collapse {
     top: 0;
     left: 100%;
     width: 200px;
@@ -481,9 +504,24 @@ ul {
     transition: 0.3s ease;
     visibility: hidden;
     opacity: 0;
+    background-color: white;
+    box-shadow: 1px 2px 16px rgb(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 
-.collapsed-sidebar .sidebar .sidebar-menu-item:hover .collapse {
+.collapsed-sidebar .sidebar .sidebar-menu-item .collapse ul {
+    padding: 0px;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu-item .collapse ul .collapse-nav-item {
+    position: relative;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu-item .collapse ul .collapse-nav-item .collapse {
+    padding: 12px;
+}
+
+.collapsed-sidebar .sidebar .dropdown-menu-item:hover>.collapse {
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
@@ -505,6 +543,55 @@ ul {
     position: relative;
     letter-spacing: 0;
     padding: 0;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu .sidebar-menu-title::before {
+    content: inherit;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu .sidebar-menu-title:first-of-type {
+    padding-top: 0;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu .sidebar-menu-title span {
+    display: none;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu .sidebar-menu-title i {
+    display: block;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu-item .collapse h6 {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    /* opacity: 0.65; */
+    padding: 6px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link,
+.collapsed-sidebar .sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link {
+    padding: 8px 8px;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 1px;
+}
+
+.collapsed-sidebar .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link:hover {
+    background-color: rgb(0, 0, 0, .03);
+    color: var(--bg-stone-700);
+}
+
+.sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link .svg-icon.caret-arrow-right {
+    margin-left: auto;
 }
 
 /* ------------------------------------------------------------------------------------------ */
