@@ -191,8 +191,9 @@
     --sidebar-background-color: white;
     --sidebar-border-color: var(--bg-stone-200);
 
-    /* HEADER */
+    /* VALUES */
     --header-height: 74px;
+    --sidebar-footer-height: 64px;
 }
 
 ::selection {
@@ -303,8 +304,10 @@ ul {
 }
 
 .sidebar .sidebar-menu {
+    --height: calc(var(--sidebar-footer-height) + var(--header-height));
     overflow-y: scroll;
-    height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--height));
+    padding: 0 16px;
 }
 
 .sidebar .sidebar-menu::-webkit-scrollbar {
@@ -324,7 +327,7 @@ ul {
     font-weight: 600;
     position: relative;
     letter-spacing: 0.4px;
-    padding: 16px 16px 4px;
+    padding: 16px 0 4px;
     text-transform: uppercase;
 }
 
@@ -362,7 +365,12 @@ ul {
 
 .sidebar .sidebar-menu .sidebar-menu-item .collapse ul,
 .sidebar .sidebar-menu .sidebar-menu-item .collapsing ul {
-    padding: 0 24px 0;
+    padding-left: 14px;
+}
+
+.sidebar .sidebar-menu .collapse-nav-menu .collapse,
+.sidebar .sidebar-menu .collapse-nav-menu .collapsing {
+    padding-left: 0 !important;
 }
 
 .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link,
@@ -408,13 +416,18 @@ ul {
 .sidebar .sidebar-menu .sidebar-menu-item .collapsing .collapse-nav-link::before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
-    left: 0;
-    top: 50%;
+    width: 8px;
+    height: 1px;
+    left: -6px;
+    top: 47%;
     transform: translateY(-50%);
     border-radius: 50%;
-    border: 1px solid var(--bg-stone-400);
+    background-color: #6b6b6b;
+}
+
+.sidebar .sidebar-menu .collapse-nav-menu .collapse .collapse-nav-link::before,
+.sidebar .sidebar-menu .collapse-nav-menu .collapsing .collapse-nav-link::before {
+    content: inherit;
 }
 
 .sidebar .sidebar-menu .sidebar-menu-item .collapse .collapse-nav-link:hover::before {
@@ -429,7 +442,7 @@ ul {
     border: none;
 }
 
-.sidebar .sidebar-menu-link[aria-expanded="true"] .svg-icon.caret-arrow-right {
+.sidebar [aria-expanded="true"] .svg-icon.caret-arrow-right {
     transform: rotate(90deg);
 }
 
@@ -439,8 +452,8 @@ ul {
 }
 
 .sidebar .svg-icon.caret-arrow-right svg {
-    width: 22px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
 }
 
 .sidebar .sidebar-menu .sidebar-menu-link {
@@ -449,8 +462,14 @@ ul {
     display: flex;
     align-items: self-end;
     position: relative;
-    padding: 12px 16px;
+    padding: 12px 0;
     transition: 0.3s ease;
+}
+
+span.sidebar-menu-icon.svg-icon {
+    display: inline-grid;
+    width: 24px;
+    place-content: center;
 }
 
 .sidebar .sidebar-menu .sidebar-menu-link[aria-expanded="true"],
@@ -475,6 +494,109 @@ ul {
     mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
+}
+
+.sidebar-footer {
+    background-color: white;
+    height: var(--sidebar-footer-height);
+    display: flex;
+    align-items: center;
+    /* box-shadow: 0 -8px 14px var(--shadow); */
+    padding: 16px 16px;
+    border-top: 1px solid var(--bg-stone-200);
+}
+
+.sidebar-footer .sidebar-auth-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-shrink {
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-shrink img {
+    --image-size: 40px;
+    width: var(--image-size);
+    height: var(--image-size);
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow .name-role h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow .name-role span {
+    font-size: 12px;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow .dropdown {
+    margin-left: auto;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow .dropdown button {
+    background-color: transparent;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow .dropdown .dropdown-menu {
+    width: 210px;
+    padding: 0;
+    font-size: 13px;
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow .dropdown .dropdown-menu li:not(:has(a)) {
+    font-size: 13px;
+    padding: 8px 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--bg-stone-200);
+}
+
+.sidebar-footer .sidebar-auth-item .auth-grow .dropdown .dropdown-menu li:last-of-type {
+    border-top: 1px solid var(--bg-stone-200);
+}
+
+.sidebar-footer .theme-switcher {
+    display: flex;
+    margin-left: auto;
+}
+
+.sidebar .sidebar-menu .sidebar-search-form {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--bg-stone-200);
+    gap: 4px;
+    position: relative;
+}
+
+.sidebar .sidebar-menu .sidebar-search-form input {
+    background-color: var(--bg-stone-100);
+}
+
+.sidebar .sidebar-menu .sidebar-search-form input:focus {
+    background-color: white;
+}
+
+.sidebar .sidebar-menu .sidebar-search-form input:focus::placeholder {
+    color: transparent;
+}
+
+.sidebar .sidebar-menu .sidebar-search-form i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
 }
 
 /* ================================================ */
@@ -583,7 +705,6 @@ ul {
     font-size: 12px;
     text-transform: uppercase;
     margin-bottom: 3px;
-    /* opacity: 0.65; */
     padding: 6px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -629,9 +750,45 @@ ul {
 }
 
 /* ------------------------------------------------------------------------------------------ */
-/* ==========>   CUSTOM UTILITIES */
+/* ==========>   BOOTSTRAP MODIFICATIONS */
 /* ------------------------------------------------------------------------------------------ */
-/* ---------->   BOOTSTRAP BADGES */
+/* DROPDOWN MENU */
+.dropdown-menu {
+    border: 1px solid var(--bg-stone-200);
+    border-radius: 4px;
+}
+
+.dropdown-item {
+    font-size: inherit;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    --bs-dropdown-link-active-bg: var(--main-color);
+}
+
+/* FORMS, BUTTONS */
+.form-control {
+    font-size: inherit;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 4px 2px rgba(var(--main-rgb-color), .25);
+}
+
+.btn {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+/* BOOTSTRAP BADGES */
 .badge {
     --bs-badge-color: #fff;
     --bs-badge-font-size: 10px;
@@ -711,4 +868,60 @@ ul {
 
 .badge-indigo.badge-shadow {
     box-shadow: 2px 2px 10px -3px var(--bg-indigo-500);
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* ==========>   COMPONENTS */
+/* ------------------------------------------------------------------------------------------ */
+/* TOGGLER SWITCHER */
+.switch-input-toggler {
+    display: none;
+}
+
+.toggle-label {
+    width: 37px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50px;
+    background-color: #dee2e6;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-ball {
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.switch-input-toggler:checked+.toggle-label .toggle-ball {
+    transform: translateX(16px);
+}
+
+.switch-input-toggler:checked+.toggle-label {
+    background-color: var(--main-color);
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* ==========>   ICONIFYICONS */
+/* ------------------------------------------------------------------------------------------ */
+.search-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }
