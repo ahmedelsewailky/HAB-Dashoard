@@ -331,7 +331,6 @@ ul {
     padding: 16px 0 4px;
     text-transform: uppercase;
     text-align: center;
-    justify-content: center;
     display: flex;
 }
 
@@ -355,7 +354,7 @@ ul {
 }
 
 .sidebar .sidebar-menu .sidebar-menu-title:not(:first-of-type) {
-    margin-top: 22px;
+    margin-top: 16px;
 }
 
 .sidebar .sidebar-menu .dropdown-menu-item {
@@ -634,10 +633,10 @@ span.sidebar-menu-icon.svg-icon {
     outline: 3px solid white;
 }
 
+.collapsed-sidebar:not(.visible-sidebar) .sidebar .sidebar-menu .sidebar-menu-title,
 .collapsed-sidebar:not(.visible-sidebar) .sidebar .sidebar-menu .sidebar-menu-link {
     justify-content: center;
 } 
-
 
 /* ------------------------------------------------------------------------------------------ */
 /* ==========>   MAIN CONTENT */
