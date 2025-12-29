@@ -1,11 +1,13 @@
-$(function () {
-    "use strict";
-
-    $(".collapsed-sidebar .sidebar")
-        .on("mouseenter", function () {
-            $("body").addClass("visible-sidebar");
+(function () {
+    fetch('./assets/css/icons.svg')
+        .then(res => res.text())
+        .then(svg => {
+            const div = document.createElement('div');
+            div.style.display = 'none';
+            div.innerHTML = svg;
+            document.body.prepend(div);
         })
-        .on("mouseleave", function () {
-            $("body").removeClass("visible-sidebar");
+        .catch(err => {
+            console.error('SVG Sprite load failed:', err);
         });
-});
+})();
