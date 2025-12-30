@@ -11,3 +11,14 @@
             console.error('SVG Sprite load failed:', err);
         });
 })();
+
+
+$(function () {
+    "use strict";
+
+    $(".simplebar-menu").each(function () {
+        if (!this.SimpleBar) {
+            new SimpleBar(this);
+        }
+    });
+});

@@ -1,6 +1,6 @@
 :root {
     /* CUSTOM VARIABLES */
-    --main-color: var(--bs-red);
+    --main-color: var(--bs-danger);
     --sidebar-width: 235px;
     --sidebar-brand-height: 64px;
     --sidebar-bg-color: white;
@@ -16,6 +16,7 @@
     --bs-link-hover-color: var(--bs-emphasis-color);
     --bs-border-color: var(--bs-gray-300);
     --bs-border-radius: 4px;
+    --bs-transition: 0.3s ease;
 }
 
 h1,
@@ -83,6 +84,15 @@ a {
 
 .sidebar .nav {
     --bs-nav-link-hover-color: var(--main-color);
+    position: relative;
+}
+
+.sidebar .nav .nav-item-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .sidebar .nav-link {
@@ -91,15 +101,21 @@ a {
     border-radius: var(--bs-border-radius);
 }
 
+.sidebar .nav-link[aria-expanded="true"] {
+    color: white;
+    background-color: var(--bs-nav-link-hover-color);
+}
+
 .sidebar .nav-link svg {
     --size: 18px;
     width: var(--size);
     height: var(--size);
+    flex-shrink: 0;
 }
 
-.sidebar .nav-link[aria-expanded="true"] {
-    color: white;
-    background-color: var(--bs-nav-link-hover-color);
+.sidebar .nav-link span {
+    transform: translateX(24px);
+    transition: var(--bs-transition);
 }
 
 .sidebar .nav .nav .nav-link {
@@ -111,14 +127,28 @@ a {
 }
 
 .sidebar .nav .nav .nav-link::before {
-    width: 8px;
     content: '';
-    height: 8px;
-    margin-left: 4px;
-    border: 1px solid;
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    margin-right: 6px;
+    border: 1px dashed;
     border-radius: 50%;
     display: inline-block;
-    margin-right: 7px;
+}
+
+.sidebar .nav .nav .nav-link.active::before {
+    background-color: rgb(var(--bs-danger-rgb), 15%);
+}
+
+.sidebar .sidebar-bottom .t-content svg {
+    width: 24px;
+    height: 20px;
+}
+
+.sidebar .sidebar-bottom .t-content button {
+    background-color: transparent;
+    border: none;
 }
 
 
@@ -142,6 +172,20 @@ a {
 
 .flex-object .t-content {
     flex-grow: 1;
+}
+
+
+
+/*  ========================================================================= */
+/*  ========  SIMPLEBAR */
+/*  ========================================================================= */
+.simplebar-scrollbar:before {
+    top: 2px;
+    bottom: 2px;
+    left: 5px;
+    right: 1px;
+    background: var(--bs-gray-400);
+    border-radius: 4px;
 }
 
 /*  ========================================================================= */
@@ -174,6 +218,14 @@ a {
 
 .dropdown-toggle[aria-expanded="true"]::after {
     transform: rotate(90deg);
+}
+
+.dropdown-menu {
+    --bs-dropdown-font-size: inherit;
+    --bs-dropdown-border-color: var(--bs-border-color);
+    --bs-dropdown-border-radius: var(--bs-border-radius);
+    --bs-dropdown-link-active-bg: var(--main-color);
+    --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
 }
 
 .btn {
