@@ -43,19 +43,17 @@
                         </form>
                     </div>
 
-                    <nav class="sidebar-nav flex-grow-1 border-bottom p-3">
+                    <nav class="sidebar-nav flex-grow-1 border-bottom py-3 px-3">
                         <ul class="nav flex-column" id="sidebarNavMenu">
                             <li class="nav-item">
-                                <a href="#dashboardCollapse" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
+                                <a href="#dashboardCollapse" class="nav-link dropdown-toggle" data-bs-toggle="collapse" aria-expanded="true">
+                                    <svg><use href="#icon-linear-chart"></use></svg>
                                     Dashboard
                                 </a>
-                                <div class="collapse" id="dashboardCollapse" data-bs-parent="#sidebarNavMenu">
+                                <div class="collapse show" id="dashboardCollapse" data-bs-parent="#sidebarNavMenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
+                                            <a href="#" class="nav-link active" aria-current="page">Analyices</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Ecommerce</a>
