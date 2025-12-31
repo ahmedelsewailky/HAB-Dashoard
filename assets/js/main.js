@@ -21,4 +21,8 @@ $(function () {
             new SimpleBar(this);
         }
     });
+
+    $(".theme-toggler").on("click", function () {
+        $("body").toggleClass("dark-theme");
+    });
 });

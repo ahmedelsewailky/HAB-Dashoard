@@ -1,440 +1,126 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAB-Dashboard - Bootstrap 5 Admin Template</title>
+    <title>Document</title>
 
-    <!-- Google fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
-    <!-- Css files & libraries -->
-    <!-- <link rel="stylesheet" href="./assets/libs/bootstrap/css/bootstrap.rtl.min.css"> -->
+    <!-- Css Files & Libraries -->
     <link rel="stylesheet" href="./assets/libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+    <link rel="stylesheet" href="https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-
 </head>
 
-<body>
+<body class="collapsed-sidebar">
     <div id="app">
         <div class="app-wrapper">
-            <aside class="sidebar left-sidebar border-end">
-                <div class="sidebar-inner d-flex flex-column h-100">
-                    <div class="sidebar-brand d-flex align-items-center border-bottom p-3">
-                        <a href="./index.html">
-                            <img src="./assets/img/logo.png" width="32" height="32" alt="hab-dashboard">
-                            HAD-Dashboard
-                        </a>
+            <aside class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-logo">
+                        <i class='bx bx-dog'></i>
+                        <span>HAB-Dashboard</span>
                     </div>
 
-                    <div class="sidebar-search border-bottom p-3">
-                        <form action="/" method="get" class="position-relative">
-                            <input type="text" name="q" id="search" class="form-control" placeholder="Search">
-                            <button type="button" class="btn-absolute">
-                                <svg width="10" height="10" viewBox="0 0 10 10">
-                                    <use href="#icon-search"></use>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
+                    <nav class="sidebar-menu">
+                        <ul>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <i class='bx bx-bar-chart-big'></i>
+                                    <span class="text">Dashboards</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-title">Apps & Pages</li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <i class='bx bx-paper-plane'></i>
+                                    <span class="text">Email</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <i class='bx bx-message-circle-detail'></i>
+                                    <span class="text">Chat</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <i class='bx bx-calendar-week'></i>
+                                    <span class="text">Calendar</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <i class='bx bx-grid-column-right'></i>
+                                    <span class="text">Kanban</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-title">Support</li>
+                            <li class="sidebar-nav-item position-relative">
+                                <a href="javascript:void(0)" class="sidebar-nav-link">
+                                    <i class='bx  bx-moon'></i>
+                                    <span class="text">Dark Mode</span>
+                                </a>
+                                <div class="theme-toggler">
+                                    <span class="switch"></span>
+                                </div>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <i class='bx  bx-phone-ring'></i>
+                                    <span class="text">Hellp</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <i class='bx  bx-message-circle-question-mark'></i>
+                                    <span class="text">Documentation</span>
+                                </a>
+                            </li>
 
-                    <nav class="border-bottom flex-grow-1 h-100 overflow-hidden sidebar-nav">
-                        <ul class="flex-column h-100 nav p-3 simplebar-menu simplebar-scrollable-y" id="sidebarNavMenu">
-                            <li class="nav-item-title">Navigation</li>
-                            <li class="nav-item">
-                                <a href="#dashboardCollapse" class="nav-link dropdown-toggle" data-bs-toggle="collapse"
-                                    aria-expanded="true">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse show" id="dashboardCollapse" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link active" aria-current="page">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item-title mt-4">Apps</li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item-title mt-4">Auth</li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item-title mt-4">UI Elements</li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#collapseMenuTow" class="nav-link dropdown-toggle" data-bs-toggle="collapse">
-                                    <svg>
-                                        <use href="#icon-linear-chart"></use>
-                                    </svg>
-                                    <span>Dashboard</span>
-                                </a>
-                                <div class="collapse" id="collapseMenuTow" data-bs-parent="#sidebarNavMenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Analyices</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Ecommerce</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">School</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
                         </ul>
                     </nav>
 
-                    <div class="sidebar-bottom p-3">
-                        <div class="flex-object">
-                            <div class="icon">
-                                <img src="./assets/img/avatars/avatar-1.png" width="32" height="32"
-                                    class="rounded-circle" alt="image">
+                    <div class="sidebar-bottom">
+                        <div class="profile-logout d-flex align-items-center gap-2">
+                            <div class="image">
+                                <img src="./assets/img/avatars/avatar-13.png" width="32" height="32"
+                                    class="rounded-circle" alt="image-avatar">
                             </div>
-                            <div class="t-content flex-object">
-                                <div class="flex-grow-1">
-                                    <h6>John Doe</h6>
-                                    <span class="small">Owner</span>
-                                </div>
-                                <div class="flex-shrink-0 dropdown">
-                                    <button type="button" data-bs-toggle="dropdown">
-                                        <svg>
-                                            <use href="#up-down-solid"></use>
-                                        </svg>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#" class="dropdown-item">Profile</a></li>
-                                        <li><a href="#" class="dropdown-item">Profile</a></li>
-                                        <li><a href="#" class="dropdown-item">Profile</a></li>
-                                        <li><a href="#" class="dropdown-item">Profile</a></li>
-                                    </ul>
-                                </div>
+                            <div class="info me-auto">
+                                <h6>Peter Parker</h6>
+                                <small>Owner</small>
+                            </div>
+                            <div class="button">
+                                <a href="#">
+                                    <i class='bx bx-arrow-out-right-stroke-circle-half'></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </aside>
-
-            <div class="page-wrapper">
+            <main class="main-wrapper">
                 <header class="header">
-                    Application Header
+                    <button type="button">Sidebar Toogler</button>
                 </header>
 
-                <main class="main-content">
-                    <h4>Hello! Dashboard ❤️</h4>
-                </main>
-            </div>
+                <div class="page-content">
+                    <h3>Hello! Bootstrap ❤️</h3>
+                </div>
+            </main>
         </div>
     </div>
 
-    <!-- Javascript files & Libraries -->
     <script src="./assets/libs/jquery/jquery-3.7.1.min.js"></script>
     <script src="./assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 
