@@ -9,17 +9,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
 
     <!-- Css Files & Libraries -->
     <link rel="stylesheet" href="./assets/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body class="collapsed-sidebar">
+<body>
     <div id="app">
         <div class="app-wrapper">
             <aside class="sidebar">
@@ -29,43 +29,255 @@
                         <span>HAB-Dashboard</span>
                     </div>
 
-                    <nav class="sidebar-menu">
-                        <ul>
+                    <nav class="sidebar-menu simplebar-menu">
+                        <ul id="sidebarMenu">
                             <li class="sidebar-nav-item">
-                                <a href="#" class="sidebar-nav-link dropdown-toggle">
-                                    <i class='bx bx-bar-chart-big'></i>
+                                <a href="#dashboardCollapse" class="sidebar-nav-link dropdown-toggle"
+                                    data-bs-toggle="collapse" aria-expanded="true">
+                                    <span class="icon"><i class='bx bx-bar-chart-big'></i></span>
                                     <span class="text">Dashboards</span>
                                 </a>
+                                <div class="collapse show" id="dashboardCollapse" data-bs-parent="#sidebarMenu">
+                                    <ul class="collapse-menu">
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">eCommerce</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">CRM</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link active">Analytics</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">School <span
+                                                    class="badge badge-dark">New</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="sidebar-nav-title">Apps & Pages</li>
                             <li class="sidebar-nav-item">
                                 <a href="#" class="sidebar-nav-link">
-                                    <i class='bx bx-paper-plane'></i>
+                                    <span class="icon"><i class='bx bx-paper-plane'></i></span>
                                     <span class="text">Email</span>
                                 </a>
                             </li>
                             <li class="sidebar-nav-item">
                                 <a href="#" class="sidebar-nav-link">
-                                    <i class='bx bx-message-circle-detail'></i>
+                                    <span class="icon"><i class='bx bx-message-circle-detail'></i></span>
                                     <span class="text">Chat</span>
                                 </a>
                             </li>
                             <li class="sidebar-nav-item">
                                 <a href="#" class="sidebar-nav-link">
-                                    <i class='bx bx-calendar-week'></i>
+                                    <span class="icon"><i class='bx bx-calendar-week'></i></span>
                                     <span class="text">Calendar</span>
                                 </a>
                             </li>
                             <li class="sidebar-nav-item">
+                                <a href="#tasksCollapse" class="sidebar-nav-link dropdown-toggle"
+                                    data-bs-toggle="collapse">
+                                    <span class="icon"><i class='bx bx-checklist'></i></span>
+                                    <span class="text">Tasks</span>
+                                </a>
+                                <div class="collapse" id="tasksCollapse" data-bs-parent="#sidebarMenu">
+                                    <ul class="collapse-menu">
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Board</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Kanban</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sidebar-nav-item">
                                 <a href="#" class="sidebar-nav-link">
-                                    <i class='bx bx-grid-column-right'></i>
-                                    <span class="text">Kanban</span>
+                                    <span class="icon"><i class='bx bx-grid-column-right'></i></span>
+                                    <span class="text">To-Do</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <span class="icon"><i class='bx bx-folder'></i></span>
+                                    <span class="text">File Manager</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-title">Management</li>
+                            <li class="sidebar-nav-item">
+                                <a href="#usersCollapse" class="sidebar-nav-link dropdown-toggle"
+                                    data-bs-toggle="collapse">
+                                    <span class="icon"><i class='bx bx-group'></i> </span>
+                                    <span class="text">Users</span>
+                                </a>
+                                <div class="collapse" id="usersCollapse" data-bs-parent="#sidebarMenu">
+                                    <ul class="collapse-menu">
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Profile</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">List</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Cards</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Roles & Permissions</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#productCollapse" class="sidebar-nav-link dropdown-toggle"
+                                    data-bs-toggle="collapse">
+                                    <span class="icon"><i class='bx bx-groceries'></i> </span>
+                                    <span class="text">Products</span>
+                                </a>
+                                <div class="collapse" id="productCollapse" data-bs-parent="#sidebarMenu">
+                                    <ul class="collapse-menu">
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Product List</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Add Product</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Category List</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#orderCollapse" class="sidebar-nav-link dropdown-toggle"
+                                    data-bs-toggle="collapse">
+                                    <span class="icon"><i class='bx bx-copy-check'></i> </span>
+                                    <span class="text">Orders</span>
+                                </a>
+                                <div class="collapse" id="orderCollapse" data-bs-parent="#sidebarMenu">
+                                    <ul class="collapse-menu">
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Orders List</a>
+                                        </li>
+                                        <li class="collapse-menu-item">
+                                            <a href="#" class="collapse-menu-link">Order Details</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sidebar-nav-title">Components</li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-layers-down-right'></i></span>
+                                    <span class="text">Base UI</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-brush-sparkles'></i></span>
+                                    <span class="text">Extended UI</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-like'></i></span>
+                                    <span class="text">Icons</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-chart-trend'></i></span>
+                                    <span class="text">Charts</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-perspective'></i></span>
+                                    <span class="text">Forms</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-table-list'></i></span>
+                                    <span class="text">Tables</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-map'></i></span>
+                                    <span class="text">Maps</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-dropdown'></i></span>
+                                    <span class="text">Multi Level</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-title">Pages</li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <span class="icon"><i class='bx bx-iframe'></i></span>
+                                    <span class="text">Landing Page</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <span class="icon"><i class='bx bx-tab'></i></span>
+                                    <span class="text">Blank Page</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <span class="icon"><i class='bx bx-rocket'></i></span>
+                                    <span class="text">Starter Kit</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <span class="icon"><i class='bx bx-compare'></i></span>
+                                    <span class="text">Comming Soon</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-bug-alt'></i></span>
+                                    <span class="text">Error Pages</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-folder'></i></span>
+                                    <span class="text">Roles & Permissions</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-check-shield'></i></span>
+                                    <span class="text">Auhtentications</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link dropdown-toggle">
+                                    <span class="icon"><i class='bx bx-check-shield'></i></span>
+                                    <span class="text">Roles & Permissions</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <span class="icon"><i class='bx bx-key'></i></span>
+                                    <span class="text">Pricing</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#" class="sidebar-nav-link">
+                                    <span class="icon"><i class='bx bx-message-bubble-question-mark'></i></span>
+                                    <span class="text">Faqs</span>
                                 </a>
                             </li>
                             <li class="sidebar-nav-title">Support</li>
                             <li class="sidebar-nav-item position-relative">
                                 <a href="javascript:void(0)" class="sidebar-nav-link">
-                                    <i class='bx  bx-moon'></i>
+                                    <span class="icon"><i class='bx  bx-moon'></i></span>
                                     <span class="text">Dark Mode</span>
                                 </a>
                                 <div class="theme-toggler">
@@ -74,13 +286,13 @@
                             </li>
                             <li class="sidebar-nav-item">
                                 <a href="#" class="sidebar-nav-link">
-                                    <i class='bx  bx-phone-ring'></i>
-                                    <span class="text">Hellp</span>
+                                    <span class="icon"><i class='bx bx-'></i></span>
+                                    <span class="text">Hellp Center</span>
                                 </a>
                             </li>
                             <li class="sidebar-nav-item">
                                 <a href="#" class="sidebar-nav-link">
-                                    <i class='bx  bx-message-circle-question-mark'></i>
+                                    <span class="icon"><i class='bx  bx-message-circle-question-mark'></i></span>
                                     <span class="text">Documentation</span>
                                 </a>
                             </li>
@@ -121,6 +333,7 @@
 
     <script src="./assets/libs/jquery/jquery-3.7.1.min.js"></script>
     <script src="./assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 

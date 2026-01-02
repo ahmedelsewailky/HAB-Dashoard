@@ -12,6 +12,9 @@
         });
 })();
 
+// var el = document.querySelector('.simplebar-menu');
+// SimpleScrollbar.initEl(el);
+
 
 $(function () {
     "use strict";
