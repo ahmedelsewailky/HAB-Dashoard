@@ -1,11 +1,23 @@
 :root {
+    /* BOOTSTRAP */
+    --bs-body-bg: white;
+    --bs-body-color: var(--bs-gray-700);
+
+    /* SIDEBAR */
+    --sidebar-bg: white;
+    --sidebar-hover-bg: var(--bs-gray-200);
+    --sidebar-hover-text-color: var(--bs-gray-700);
     --sidebar-brand-height: 70px;
     --sidebar-bottom-height: 70px;
+
+    /* CUSTOM */
+    --main-color: var(--bs-danger);
+    --border-color: var(--bs-gray-200);
 }
 
 body {
-    color: var(--bs-gray-700);
     font-size: 14px;
+    color: var(--bs-body-color);
     font-family: "Jost", "Poppins", "Changa", sans-serif;
 }
 
@@ -30,6 +42,15 @@ a {
     font-size: 18px;
 }
 
+.dark-theme {
+    --bs-body-color: white;
+    --bs-body-bg: var(--bs-dark);
+    --sidebar-bg: var(--bs-dark);
+    --sidebar-hover-bg: var(--bs-gray-800);
+    --sidebar-hover-text-color: white;
+    --border-color: var(--bs-gray-900);
+}
+
 .sidebar {
     position: fixed;
     width: 250px;
@@ -37,8 +58,8 @@ a {
     left: 0;
     top: 0;
     z-index: 1035;
-    border-right: 1px solid var(--bs-gray-200);
-    background-color: white;
+    border-right: 1px solid var(--border-color);
+    background-color: var(--sidebar-bg);
     transition: 0.3s ease;
 }
 
@@ -111,13 +132,13 @@ a {
 .sidebar-nav-link:hover,
 .sidebar-menu .collapse-menu .collapse-menu-link:hover,
 .sidebar-menu .collapse-menu .collapse-menu-link.active {
-    background-color: var(--bs-gray-100);
-    color: var(--bs-gray-700);
+    background-color: var(--sidebar-hover-bg);
+    color: var(--sidebar-hover-text-color);
 }
 
 .sidebar-nav-link.active,
 .sidebar-nav-link[aria-expanded=true] {
-    background-color: var(--bs-gray-800);
+    background-color: var(--main-color);
     color: white;
 }
 
@@ -184,7 +205,7 @@ a {
 }
 
 .dark-theme .theme-toggler .switch {
-    background-color: var(--bs-gray-800);
+    background-color: var(--main-color);
 }
 
 
@@ -230,7 +251,7 @@ a {
 }
 
 .sidebar-menu .collapse-menu .collapse-menu-link.active {
-    color: black;
+    color: var(--sidebar-hover-text-color);
 }
 
 .sidebar-menu .collapse-menu .collapse-menu-link::before {
@@ -245,7 +266,7 @@ a {
 }
 
 .sidebar-menu .collapse-menu .collapse-menu-link.active::before {
-    background-color: var(--bs-gray-700);
+    background-color: var(--main-color);
 }
 
 .sidebar-menu .collapse-menu::before {
@@ -253,7 +274,7 @@ a {
     position: absolute;
     height: 100%;
     width: 1px;
-    background-color: var(--bs-gray-300);
+    background-color: var(--sidebar-hover-bg);
     left: 20px;
 }
 
