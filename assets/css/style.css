@@ -51,6 +51,9 @@ a {
     --border-color: var(--bs-gray-900);
 }
 
+/* ============================================================================================== */
+/* ======== SIDEBAR */
+/* ============================================================================================== */
 .sidebar {
     position: fixed;
     width: 250px;
@@ -63,7 +66,7 @@ a {
     transition: 0.3s ease;
 }
 
-.sidebar-logo {
+.sidebar .sidebar-logo {
     padding: 16px;
     display: flex;
     align-items: center;
@@ -71,11 +74,11 @@ a {
     height: var(--sidebar-brand-height);
 }
 
-.sidebar-logo i {
+.sidebar .sidebar-logo i {
     font-size: 26px;
 }
 
-.sidebar-logo span {
+.sidebar .sidebar-logo span {
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -84,23 +87,18 @@ a {
     transition: 0.3s ease;
 }
 
-.collapsed-sidebar .sidebar-logo span {
-    transform: translateX(24px);
-    opacity: 0;
-}
-
-.sidebar-inner {
+.sidebar .sidebar-inner {
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.sidebar-menu {
+.sidebar .sidebar-menu {
     flex: 1;
     height: calc(var(--sidebar-brand-height) - var(--sidebar-bottom-height));
 }
 
-.sidebar-menu ul {
+.sidebar .sidebar-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -110,7 +108,7 @@ a {
     padding: 16px;
 }
 
-.sidebar-nav-link {
+.sidebar .sidebar-menu ul .sidebar-nav-link {
     display: flex;
     gap: 2px;
     transition: 0.3s ease;
@@ -121,7 +119,7 @@ a {
     padding: 2px 8px 2px 4px;
 }
 
-.sidebar-nav-link .icon {
+.sidebar .sidebar-menu ul .sidebar-nav-link .icon {
     display: inline-grid;
     place-content: center;
     width: 34px;
@@ -129,20 +127,20 @@ a {
     flex-shrink: 0;
 }
 
-.sidebar-nav-link:hover,
-.sidebar-menu .collapse-menu .collapse-menu-link:hover,
-.sidebar-menu .collapse-menu .collapse-menu-link.active {
+.sidebar .sidebar-menu ul .sidebar-nav-link:hover,
+.sidebar .sidebar-menu .collapse-menu .collapse-menu-link:hover,
+.sidebar .sidebar-menu .collapse-menu .collapse-menu-link.active {
     background-color: var(--sidebar-hover-bg);
     color: var(--sidebar-hover-text-color);
 }
 
-.sidebar-nav-link.active,
-.sidebar-nav-link[aria-expanded=true] {
+.sidebar .sidebar-menu ul .sidebar-nav-link.active,
+.sidebar .sidebar-menu ul .sidebar-nav-link[aria-expanded=true] {
     background-color: var(--main-color);
     color: white;
 }
 
-.sidebar-nav-link.dropdown-toggle::after {
+.sidebar .dropdown-toggle::after {
     margin-left: auto;
     border: none;
     display: inline-block;
@@ -154,32 +152,81 @@ a {
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='m10.207 8l-3.854 3.854l-.707-.707L8.793 8L5.646 4.854l.707-.708z' clip-rule='evenodd'/%3E%3C/svg%3E");
 }
 
-.sidebar-nav-link.dropdown-toggle[aria-expanded="true"]::after {
+.sidebar .dropdown-toggle[aria-expanded="true"]::after {
     transform: rotate(90deg);
 }
 
-.sidebar-nav-title {
+.sidebar .sidebar-nav-title {
     margin: 16px 0 8px;
     font-weight: 600;
     white-space: normal;
 }
 
-.sidebar-bottom {
+.sidebar .sidebar-bottom {
     flex-shrink: 0;
     padding: 0 16px;
     height: var(--sidebar-brand-height);
 }
 
-.sidebar-bottom .profile-logout {
+.sidebar .sidebar-bottom .profile-logout {
     gap: 16px;
     padding: 12px;
     display: flex;
-    color: white;
+    color: #62748e;
     border-radius: 4px;
     align-items: center;
-    background-color: var(--bs-gray-800);
+    background-color: #f1f5f9;
 }
 
+.sidebar .sidebar-menu .text {
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.sidebar .sidebar-menu .collapse-menu {
+    padding: 0;
+    padding-left: 34px;
+    position: relative;
+}
+
+.sidebar .sidebar-menu .collapse-menu .collapse-menu-link {
+    padding: 8px 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.sidebar .sidebar-menu .collapse-menu .collapse-menu-link.active {
+    color: var(--sidebar-hover-text-color);
+}
+
+.sidebar .sidebar-menu .collapse-menu .collapse-menu-link::before {
+    content: '';
+    position: absolute;
+    height: 65%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    background-color: transparent;
+    left: -14px;
+}
+
+.sidebar .sidebar-menu .collapse-menu .collapse-menu-link.active::before {
+    background-color: var(--main-color);
+}
+
+.sidebar .sidebar-menu .collapse-menu::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: var(--sidebar-hover-bg);
+    left: 20px;
+}
+
+/* ============ THEME COLOR */
 .theme-toggler {
     display: flex;
     width: 75px;
@@ -204,11 +251,6 @@ a {
     transition: 0.3s ease;
 }
 
-.dark-theme .theme-toggler .switch {
-    background-color: var(--main-color);
-}
-
-
 .theme-toggler .switch::before {
     content: '';
     position: absolute;
@@ -226,58 +268,13 @@ a {
     left: 25px;
 }
 
-.collapsed-sidebar .sidebar {
-    width: 70px;
-}
-
-.sidebar .sidebar-menu .text {
-    white-space: nowrap;
-    transition: 0.3s ease;
-}
-
-.sidebar-menu .collapse-menu {
-    padding: 0;
-    padding-left: 34px;
-    position: relative;
-}
-
-.sidebar-menu .collapse-menu .collapse-menu-link {
-    padding: 8px 8px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1px;
-    border-radius: 4px;
-    position: relative;
-}
-
-.sidebar-menu .collapse-menu .collapse-menu-link.active {
-    color: var(--sidebar-hover-text-color);
-}
-
-.sidebar-menu .collapse-menu .collapse-menu-link::before {
-    content: '';
-    position: absolute;
-    height: 65%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2px;
-    background-color: transparent;
-    left: -14px;
-}
-
-.sidebar-menu .collapse-menu .collapse-menu-link.active::before {
+.dark-theme .theme-toggler .switch {
     background-color: var(--main-color);
 }
 
-.sidebar-menu .collapse-menu::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    background-color: var(--sidebar-hover-bg);
-    left: 20px;
-}
-
+/* ============================================================================================== */
+/* ======== BOOTSTRAP */
+/* ============================================================================================== */
 .badge {
     border-radius: 3px;
     font-weight: 400;

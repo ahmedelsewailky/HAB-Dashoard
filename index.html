@@ -383,10 +383,32 @@
                                 <div class="collapse" id="multilevelCollapse" data-bs-parent="#sidebarMenu">
                                     <ul class="collapse-menu">
                                         <li class="collapse-menu-item">
-                                            <a href="#" class="collapse-menu-link">Second Level</a>
+                                            <a href="#secondLevelCollapse" class="collapse-menu-link dropdown-toggle"
+                                                data-bs-toggle="collapse">Second Level</a>
+                                            <div class="collapse" id="secondLevelCollapse"
+                                                data-bs-parent="#multilevelCollapse">
+                                                <ul class="collapse-menu child">
+                                                    <li class="collapse-menu-item">
+                                                        <a href="#" class="collapse-menu-link">Second I</a>
+                                                        <a href="#" class="collapse-menu-link">Second II</a>
+                                                        <a href="#" class="collapse-menu-link">Second III</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </li>
                                         <li class="collapse-menu-item">
-                                            <a href="#" class="collapse-menu-link">Third Level</a>
+                                            <a href="#thirdLevelCollapse" class="collapse-menu-link dropdown-toggle"
+                                                data-bs-toggle="collapse">Third Level</a>
+                                            <div class="collapse" id="thirdLevelCollapse"
+                                                data-bs-parent="#multilevelCollapse">
+                                                <ul class="collapse-menu child">
+                                                    <li class="collapse-menu-item">
+                                                        <a href="#" class="collapse-menu-link">Third I</a>
+                                                        <a href="#" class="collapse-menu-link">Third II</a>
+                                                        <a href="#" class="collapse-menu-link">Third III</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
