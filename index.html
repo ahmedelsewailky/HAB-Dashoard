@@ -22,6 +22,7 @@
 <body>
     <div id="app">
         <div class="app-wrapper">
+            <!-- ==========================================================================**  SIDEBAR **-->
             <aside class="sidebar">
                 <div class="sidebar-inner">
                     <div class="sidebar-logo">
@@ -546,11 +547,109 @@
                         </div>
                     </div>
                 </div>
-            </aside>
+            </aside><!-- ./sidebar-->
+
+
+
             <main class="main-wrapper">
-                <header class="header">
-                    <button type="button">Sidebar Toogler</button>
-                </header>
+                <!-- ==========================================================================**  HEADER NAVBAR **-->
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="./index.html">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#appNavbarMenu" aria-controls="appNavbarMenu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="appNavbarMenu">
+                            <!-- ----------- Left Menu -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link sidebar-toggler-button">
+                                        <i class='bx bx-menu collapse-sidebar-icon'></i>
+                                        <i class='bx bx-x extend-sidebar-icon'></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Apps
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Calendar</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Chat</a>
+                                </li>
+                            </ul>
+
+                            <form class="d-flex mx-auto" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search"
+                                    aria-label="Search" />
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+
+                            <!-- ----------- Right Menu -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class='bx bx-search-big'></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link theme-toggler">
+                                        <i class='bx bx-moon'></i>
+                                        <i class='bx bx-sun'></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class='bx bx-bell'></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link d-flex align-items-center" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div class="flex-shrink-0">
+                                            <img src="./assets/img/avatars/avatar-1.png" width="32" height="32"
+                                                alt="image-avatar">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6>Alber Anderson</h6>
+                                            <small>Admin</small>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav><!-- ./navbar-->
 
                 <div class="page-content">
                     <h3>Hello! Bootstrap ❤️</h3>

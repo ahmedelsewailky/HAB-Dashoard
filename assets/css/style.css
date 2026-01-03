@@ -5,6 +5,7 @@
 
     /* SIDEBAR */
     --sidebar-bg: white;
+    --sidebar-width: 250px;
     --sidebar-hover-bg: var(--bs-gray-200);
     --sidebar-hover-text-color: var(--bs-gray-700);
     --sidebar-brand-height: 70px;
@@ -55,15 +56,15 @@ a {
 /* ======== SIDEBAR */
 /* ============================================================================================== */
 .sidebar {
-    position: fixed;
-    width: 250px;
-    height: 100%;
-    left: 0;
     top: 0;
+    left: 0;
+    height: 100%;
     z-index: 1035;
-    border-right: 1px solid var(--border-color);
-    background-color: var(--sidebar-bg);
+    position: fixed;
     transition: 0.3s ease;
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
 }
 
 .sidebar .sidebar-logo {
@@ -72,6 +73,7 @@ a {
     align-items: center;
     gap: 8px;
     height: var(--sidebar-brand-height);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .sidebar .sidebar-logo i {
@@ -227,7 +229,7 @@ a {
 }
 
 /* ============ THEME COLOR */
-.theme-toggler {
+.sidebar .theme-toggler {
     display: flex;
     width: 75px;
     position: absolute;
@@ -240,7 +242,7 @@ a {
     cursor: pointer;
 }
 
-.theme-toggler .switch {
+.sidebar .theme-toggler .switch {
     display: flex;
     align-items: center;
     background-color: var(--bs-gray-300);
@@ -251,7 +253,7 @@ a {
     transition: 0.3s ease;
 }
 
-.theme-toggler .switch::before {
+.sidebar .theme-toggler .switch::before {
     content: '';
     position: absolute;
     width: 18px;
@@ -264,12 +266,50 @@ a {
     transition: 0.3s ease;
 }
 
-.dark-theme .theme-toggler .switch::before {
+.dark-theme .sidebar .theme-toggler .switch::before {
     left: 25px;
 }
 
-.dark-theme .theme-toggler .switch {
+.dark-theme .sidebar .theme-toggler .switch {
     background-color: var(--main-color);
+}
+
+/* ============================================================================================== */
+/* ======== NAVBAR */
+/* ============================================================================================== */
+.main-wrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    padding-left: var(--sidebar-width);
+}
+
+.navbar {
+    height: var(--sidebar-brand-height);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar .nav-link:focus,
+.navbar .nav-link:hover {
+    color: var(--main-color);
+}
+
+.navbar .bx-search-big,
+.navbar .bx-sun,
+.navbar .navbar-brand,
+.dark-theme .navbar .bx-moon,
+.navbar .extend-sidebar-icon,
+.collapsed-sidebar .navbar .collapse-sidebar-icon {
+    display: none;
+}
+
+.dark-theme .navbar .bx-sun,
+.collapsed-sidebar .navbar .extend-sidebar-icon {
+    display: block;
+}
+
+.dark-theme .navbar {
+    --bs-navbar-color: white;
 }
 
 /* ============================================================================================== */
